@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <main class="container">
+        <div class="row">
+            <section class="col-md-4 offset-md-4">
+                <form class="card card-body" action="/signin/" method="POST">
+                    {{error}}
+                    {% csrf_token %}
+                    <h1 class="text-center">Sign in</h1>
+                    <div class="mb-3">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Write youre username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password1" name="password" class="form-control"
+                            placeholder="Write youre password">
+                    </div>
+                    <button class="btn btn-dark">Sign in</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    {% endblock %}
+</body>
+
+</html>
